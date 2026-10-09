@@ -31,10 +31,10 @@ export const config = {
   siteTitle: env('SITE_TITLE', 'Member Map'),
   // When false, only logged-in members of the server can see the map and the pin list.
   mapPublic: env('MAP_PUBLIC', 'true').toLowerCase() !== 'false',
-  tileUrl: env('TILE_URL', 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'),
+  tileUrl: env('TILE_URL', 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'),
   tileAttribution: env(
     'TILE_ATTRIBUTION',
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   ),
   discord: {
     clientId: required('DISCORD_CLIENT_ID'),

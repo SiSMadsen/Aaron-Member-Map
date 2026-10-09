@@ -108,6 +108,7 @@ h2 {
   font: inherit;
   font-weight: 600;
   text-decoration: none;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -380,6 +381,14 @@ h2 {
 }
 
 @media (max-width: 640px) {
+  .topbar {
+    padding: 8px 12px;
+  }
+
+  .brand h1 {
+    font-size: 16px;
+  }
+
   .account .name,
   .count {
     display: none;

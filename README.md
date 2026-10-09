@@ -67,7 +67,7 @@ The site then checks every pinned member once an hour.
 | `MAP_PUBLIC` | `true` | `false` = only logged-in members can see the map. |
 | `DISCORD_REQUIRED_ROLE_ID` | – | Only members with this role can add themselves. |
 | `DATA_DIR` | `data` | Where pins are saved (`store.json`). |
-| `TILE_URL`, `TILE_ATTRIBUTION` | CARTO light | Background map tiles. |
+| `TILE_URL`, `TILE_ATTRIBUTION` | OpenStreetMap | Background map tiles (any `{z}/{x}/{y}` tile server). |
 
 ## Deploying
 
