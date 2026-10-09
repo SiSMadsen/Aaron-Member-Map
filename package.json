@@ -1,0 +1,35 @@
+{
+  "name": "member-map",
+  "version": "1.0.0",
+  "description": "Discord member map: members log in with Discord and pin the province they are from.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "build:geodata": "node scripts/build-geodata.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiSMadsen/Aaron-Member-Map.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SiSMadsen/Aaron-Member-Map/issues"
+  },
+  "homepage": "https://github.com/SiSMadsen/Aaron-Member-Map#readme",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "cookie-session": "^2.1.1",
+    "d3-geo": "^3.1.1",
+    "express": "^5.2.1",
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3"
+  },
+  "devDependencies": {
+    "mapshaper": "^0.7.81"
+  },
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20.12"
+  }
+}
