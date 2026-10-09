@@ -1,0 +1,398 @@
+:root {
+  --bg: #1e1f22;
+  --surface: #2b2d31;
+  --surface-2: #313338;
+  --border: #3f4147;
+  --text: #f2f3f5;
+  --muted: #b5bac1;
+  --blurple: #5865f2;
+  --blurple-hover: #4752c4;
+  --danger: #da373c;
+  --success: #23a55a;
+  --radius: 10px;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.45 'gg sans', 'Noto Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand h1 {
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.count,
+.muted {
+  color: var(--muted);
+}
+
+.count {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.account .name {
+  font-weight: 600;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  filter: brightness(1.15);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.button.primary,
+.button.discord {
+  background: var(--blurple);
+  color: #fff;
+}
+
+.button.primary:hover,
+.button.discord:hover {
+  background: var(--blurple-hover);
+  filter: none;
+}
+
+.button.danger {
+  background: transparent;
+  color: #fa777c;
+  border: 1px solid currentColor;
+}
+
+.button.link {
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 8px;
+}
+
+.banner {
+  padding: 10px 16px;
+  background: var(--danger);
+  color: #fff;
+  font-weight: 600;
+}
+
+.layout {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.map {
+  position: absolute;
+  inset: 0;
+  background: #aad3df;
+}
+
+.panel {
+  position: absolute;
+  z-index: 1000;
+  top: 16px;
+  right: 16px;
+  width: 320px;
+  max-width: calc(100% - 32px);
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.panel h2 {
+  font-size: 16px;
+}
+
+.panel-head .button {
+  padding: 0 8px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.panel.collapsed #panel-body {
+  display: none;
+}
+
+.panel p {
+  margin: 0 0 8px;
+}
+
+.panel label {
+  display: block;
+  margin: 12px 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.panel input,
+.panel select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.panel .hint {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.actions .button {
+  flex: 1;
+}
+
+.status {
+  min-height: 1.2em;
+  margin-top: 10px !important;
+  font-size: 14px;
+}
+
+.status.error {
+  color: #fa777c;
+}
+
+.status.ok {
+  color: var(--success);
+}
+
+.gate {
+  position: absolute;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(17, 18, 20, 0.7);
+}
+
+.gate-card {
+  max-width: 380px;
+  padding: 24px;
+  text-align: center;
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+
+.gate-card p {
+  color: var(--muted);
+}
+
+/* Avatars on the map */
+.avatar-marker {
+  background: none;
+  border: 0;
+}
+
+.avatar-marker img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: var(--surface-2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.avatar-marker.me img {
+  border-color: var(--blurple);
+}
+
+.avatar-cluster {
+  background: none;
+  border: 0;
+}
+
+.avatar-cluster .stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-cluster img {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: var(--surface-2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.avatar-cluster .badge {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  min-width: 24px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  background: var(--blurple);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid #fff;
+}
+
+/* Member popup */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.leaflet-popup-content {
+  margin: 14px 16px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--muted);
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 200px;
+  font: 15px/1.4 'gg sans', 'Noto Sans', system-ui, sans-serif;
+}
+
+.member-card img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.member-card .display {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.member-card .handle,
+.member-card .place {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.member-card .place {
+  margin-top: 4px;
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .account .name,
+  .count {
+    display: none;
+  }
+
+  .panel {
+    top: auto;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    width: auto;
+    max-width: none;
+    max-height: 60%;
+    overflow: auto;
+  }
+}

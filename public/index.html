@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Member Map</title>
+    <meta name="description" content="Where our Discord members are from." />
+    <link rel="stylesheet" href="/vendor/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="/vendor/markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <h1 id="title">Member Map</h1>
+        <span id="count" class="count"></span>
+      </div>
+      <div id="account" class="account"></div>
+    </header>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <main class="layout">
+      <div id="map" class="map" aria-label="Map of members"></div>
+
+      <aside id="panel" class="panel" hidden>
+        <div class="panel-head">
+          <h2>Where are you from?</h2>
+          <button id="collapse" class="button link" type="button" aria-expanded="true" aria-controls="panel-body" title="Show/hide">–</button>
+        </div>
+        <div id="panel-body">
+          <p id="current" class="muted"></p>
+
+          <label for="country">Country</label>
+          <input id="country" list="country-list" placeholder="Start typing a country…" autocomplete="off" />
+          <datalist id="country-list"></datalist>
+
+          <label for="province">Province / region</label>
+          <select id="province" disabled>
+            <option value="">Pick a country first</option>
+          </select>
+          <p class="hint muted">You can also click your province on the map.</p>
+
+          <div class="actions">
+            <button id="save" class="button primary" disabled>Save</button>
+            <button id="remove" class="button danger" hidden>Remove me</button>
+          </div>
+          <p id="status" class="status" role="status"></p>
+        </div>
+      </aside>
+
+      <div id="gate" class="gate" hidden>
+        <div class="gate-card">
+          <h2>Members only</h2>
+          <p>Log in with Discord to see where the members of the server are from.</p>
+          <a class="button discord" href="/auth/login">Log in with Discord</a>
+        </div>
+      </div>
+    </main>
+
+    <script src="/vendor/leaflet/leaflet.js"></script>
+    <script src="/vendor/markercluster/leaflet.markercluster.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
